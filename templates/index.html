@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🔍 Fake News Detector</h1>
+            <p>Analyze news articles and text for credibility</p>
+        </header>
+
+        <main>
+            <!-- Input Card -->
+            <div class="card input-card">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('text')">Text Analysis</button>
+                    <button class="tab-btn" onclick="switchTab('url')">URL Analysis</button>
+                </div>
+
+                <!-- Text Input Section -->
+                <div id="text-section" class="input-section active">
+                    <label>Enter News Text</label>
+                    <textarea id="news-text" placeholder="Paste your news article or text here..."></textarea>
+                    <button class="action-btn" onclick="analyze('text')">Analyze Text</button>
+                </div>
+
+                <!-- URL Input Section -->
+                <div id="url-section" class="input-section">
+                    <label>Enter News URL</label>
+                    <input type="text" id="news-url" placeholder="https://...">
+                    <button class="action-btn" onclick="analyze('url')">Analyze URL</button>
+                </div>
+            </div>
+
+            <!-- Result Card (Hidden by default) -->
+            <div id="result-card" class="card result-card hidden">
+                <div class="result-header">
+                    <h2>Analysis Result</h2>
+                    <span id="result-badge" class="badge"></span>
+                </div>
+
+                <div class="confidence-section">
+                    <p class="label">Confidence Level</p>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p id="confidence-text" class="confidence-text">0%</p>
+                </div>
+
+                <div class="indicators">
+                    <div class="indicator">
+                        <p class="label">Fake News Indicators:</p>
+                        <p id="fake-count" class="count">0</p>
+                    </div>
+                    <div class="indicator">
+                        <p class="label">Real News Indicators:</p>
+                        <p id="real-count" class="count">0</p>
+                    </div>
+                </div>
+
+                <div id="result-message" class="message-box"></div>
+            </div>
+            
+            <p class="disclaimer">Note: This is a prediction system. Always verify news from multiple credible sources.</p>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

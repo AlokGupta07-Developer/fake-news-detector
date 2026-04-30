@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6c72fa, #8e54e9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    color: #333;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #f0f0f0;
+    color: #666;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    background: linear-gradient(to right, #6c72fa, #8e54e9);
+    color: white;
+}
+
+.input-section {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-section.active {
+    display: flex;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border-color: #6c72fa;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #6c72fa, #8e54e9);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    padding: 6px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.badge.real { background: #2ecc71; }
+.badge.fake { background: #ff4757; }
+
+.confidence-section {
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    height: 12px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar.real { background: #2ecc71; }
+.progress-bar.fake { background: #ff4757; }
+
+.confidence-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.indicator .count {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.message-box {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.message-box.real {
+    background: #e3f2fd;
+    color: #1976d2;
+    border-left: 4px solid #1976d2;
+}
+
+.message-box.fake {
+    background: #fff3e0;
+    color: #f57c00;
+    border-left: 4px solid #f57c00;
+}
+
+.disclaimer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
